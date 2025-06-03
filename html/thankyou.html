@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Confirmed - Travel Nest</title>
+  <link rel="stylesheet" href="../css/resort.css">
+  <style>
+    .thankyou-container {
+      max-width: 600px;
+      margin: 100px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      animation: fadeIn 0.8s ease;
+    }
+    .thankyou-container h1 {
+      font-size: 2.5rem;
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+    .thankyou-container p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 30px;
+    }
+    .thankyou-container img {
+      width: 150px;
+      margin-bottom: 30px;
+    }
+    .thankyou-btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .thankyou-btn:hover {
+      background-color: #155ab6;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">
+    <img src="../src/logo.png" alt="Travel Nest">
+    <span>Travel Nest</span>
+  </div>
+  <div class="nav-links">
+    <a href="../html/search.html">Home</a>
+    <a href="#">Destinations</a>
+    <a href="#">Offers</a>
+    <a href="#">Contact Us</a>
+    <button class="sign-in">Sign In</button>
+  </div>
+</nav>
+
+<div class="thankyou-container">
+  <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Success Icon">
+  <h1>Booking Confirmed!</h1>
+  <p>Thank you for choosing Travel Nest. We look forward to hosting you! 🌴</p>
+  <a href="../html/search.html" class="thankyou-btn">Explore More Resorts</a>
+</div>
+
+</body>
+</html>

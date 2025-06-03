@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif; /* more modern feel */
+}
+
+body {
+    background: #f5f7fa; /* light background */
+    min-height: 100vh;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: rgba(255, 255, 255, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.hero-section {
+    height: 50vh;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+    padding: 0 20px;
+    margin-top: 60px;
+    z-index: -1;
+    /* No background-image here */
+}
+
+
+/* .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(208, 200, 200, 0.5);
+} */
+
+.hero-content p {
+    font-size: 1.8rem;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px rgba(248, 248, 248, 0.5);
+    color: white
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+}
+
+.sign-in {
+    background: #1a73e8;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* Remove navbar styles - no navbar here */
+
+/* Resort Container */
+.resort-container {
+    max-width: 1100px;
+    margin: -140px auto 3rem auto; /* 👈 this makes it overlap */
+    padding: 2.5rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    position: relative; /* Important for layering */
+    z-index: 10; /* make sure it appears above hero */
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.breadcrumb a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+/* Resort Name */
+.resort-name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* Gallery Section */
+.gallery-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-bottom: 2rem;
+}
+
+.main-image {
+    position: relative;
+}
+
+.main-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Styling for Gallery Container */
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .main-image-container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .main-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .thumbnails-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .thumbnails-container img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border: 2px solid #ddd;
+  }
+  
+  .thumbnails-container img:hover {
+    transform: scale(1.1);
+    border-color: #333;
+  }
+  
+.photo-count {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+
+
+
+
+/* Resort Info */
+.resort-info {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+/* Booking Card */
+.booking-card {
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.book-now {
+    width: 100%;
+    padding: 14px;
+    background: #1a73e8;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.book-now:hover {
+    background: #155ab6;
+}
+
+/* Amenities Section */
+.amenities {
+    margin-top: 2rem;
+}
+
+.amenity-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Rating Section */
+.rating-section {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.rating {
+    background: #1a73e8;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.rating-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.rating-text span:first-child {
+    font-weight: 600;
+}
+
+.rating-text span:last-child {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.all-reviews {
+    color: #1a73e8;
+    text-decoration: underline;
+    margin-left: auto;
+    font-size: 0.95rem;
+}
+
+/* Pricing */
+.pricing {
+    margin: 20px 0;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.current-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #222;
+    margin-left: 10px;
+}
+
+.taxes {
+    color: #777;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Features */
+.features {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.features li {
+    color: #555;
+    margin: 6px 0;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.features li::before {
+    content: "•";
+    margin-right: 8px;
+    color: #666;
+}
+
+/* More Options */
+.more-options {
+    text-align: center;
+    color: #1a73e8;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+.more-amenities {
+    background: none;
+    border: 1px solid #1a73e8;
+    color: #1a73e8;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .resort-info {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-section {
+        grid-template-columns: 1fr;
+    }
+
+    .thumbnail-gallery img {
+        height: 180px;
+    }
+}
+/*gallery section*/
+/* Gallery Style */
+.thumbnail-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 6.5rem); /* 3 per row */
+    grid-template-rows: repeat(4, 1.5fr); /* 2 rows */
+    gap: 5px;
+    margin-top: 10px;
+}
+
+  .thumbnail-gallery img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  
+  .image-modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+  }
+  
+  .modal-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .modal-navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .nav-btn {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  /* Close Button */
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+  

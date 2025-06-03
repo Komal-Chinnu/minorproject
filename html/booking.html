@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Summary - Travel Nest</title>
+  <link rel="stylesheet" href="../css/resort.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">
+    <img src="logo.png" alt="Travel Nest">
+    <span>Travel Nest</span>
+  </div>
+  <div class="nav-links">
+    <a href="search.html">Home</a>
+    <a href="#">Destinations</a>
+    <a href="#">Offers</a>
+    <a href="#">Contact Us</a>
+    <button class="sign-in">Sign In</button>
+  </div>
+</nav>
+
+<div class="hero-section">
+  <div class="hero-content">
+    <h1>Booking Summary</h1>
+    <p>Review your reservation before payment</p>
+  </div>
+</div>
+
+<div class="resort-container">
+  <div class="resort-details">
+    <h1 class="resort-name" id="resort-name"></h1>
+    <span class="breadcrumb" id="resort-location"></span>
+
+    <div class="gallery-section">
+      <div class="main-image">
+        <img id="resort-img" src="" alt="Resort Image">
+      </div>
+    </div>
+
+    <div class="resort-info">
+      <div class="left-section">
+        <div class="booking-details">
+          <h2>Reservation Details</h2>
+          <ul class="features">
+            <li><b>Check-in:</b> <span id="checkin"></span></li>
+            <li><b>Check-out:</b> <span id="checkout"></span></li>
+            <li><b>Guests:</b> <span id="guests"></span></li>
+            <li><b>Rooms:</b> <span id="rooms"></span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="booking-card">
+        <h3>Payment Summary</h3>
+        <div class="pricing">
+          <span class="current-price" id="price"></span> / night
+        </div>
+        <div class="taxes">Taxes and fees included</div>
+        <h2>Total: ₹<span id="total-price"></span></h2>
+        <button class="book-now">Continue to Payment</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/booking.js"></script>
+
+</body>
+</html>

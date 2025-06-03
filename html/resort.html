@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Nest - Resort Details</title>
+  <link rel="stylesheet" href="../css/resort.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="../src/logo.png" alt="Travel Nest" />
+      <span>Travel Nest</span>
+    </div>
+    <div class="nav-links">
+      <a href="../html/index2.html">Home</a>
+      <a href="#">Destination</a>
+      <a href="#">Offers</a>
+      <a href="#">Contact Us</a>
+      <button class="sign-in">Sign In</button>
+    </div>
+  </nav>
+
+  <div class="hero-section">
+    <div class="hero-content">
+      <p id="resort-location">Location loading...</p>
+    </div>
+  </div>
+
+  <div class="resort-container">
+    <div class="resort-details">
+      <h1 class="resort-name" id="resort-name"></h1>
+
+      <!-- Gallery Section -->
+      <div class="gallery-section" id="gallery-section">
+        <!-- Will be filled dynamically -->
+      </div>
+
+      <!-- Modal for Image Slider -->
+      <div id="image-modal" class="image-modal" style="display:none;">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+          <img id="modal-image" class="modal-image" src="" alt="Image" />
+          <div class="modal-navigation">
+            <button id="prev-btn" class="nav-btn">❮</button>
+            <button id="next-btn" class="nav-btn">❯</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="resort-info">
+        <div class="left-section">
+          <p class="description" id="resort-description"></p>
+          <a id="map-link" href="#" target="_blank">View on Map</a>
+          <a id="vlog-link" href="#" target="_blank" style="display: none;" class="vlog-button">🎥 Watch Vlog</a>
+
+          <div class="amenities">
+            <h2>Amenities</h2>
+            <div class="amenity-icons" id="amenity-icons"></div>
+          </div>
+        </div>
+
+        <div class="booking-card">
+          <h3>Deluxe Room</h3>
+          <p class="capacity">Fits 2 Adults</p>
+          <div class="pricing">
+            <span class="current-price" id="resort-price"></span> / night
+          </div>
+          <button class="book-now">BOOK NOW</button>
+          <div class="rating-section">
+            <div class="rating" id="resort-rating"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/resort.js"></script>
+</body>
+</html>

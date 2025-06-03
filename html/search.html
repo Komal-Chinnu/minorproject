@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Search</title>
+    <link rel="stylesheet" href="../css/search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Remove the <script> block containing the resorts array and logic -->
+
+    <nav class="navbar">
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="logo-container">
+            <img src="../src/logo.png" alt="Travel Nest Logo" class="navbar-logo">
+            <div class="logo-text">Travel Nest</div>
+        </div>
+        <div class="nav-links">
+            <div class="nav-item">
+                <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
+            </div>
+            <div class="nav-item">
+                <a href="#destinations"><i class="fas fa-map-marked-alt"></i> Destinations</a>
+            </div>
+            <div class="nav-item">
+                <a href="#offers"><i class="fas fa-percent"></i> Offers</a>
+            </div>
+            <div class="nav-item">
+                <a href="#contact"><i class="fas fa-envelope"></i> Contact Us</a>
+            </div>
+        </div>
+        <button id="signin-btn" class="sign-in">Sign In</button>
+        <button id="logout-btn" class="sign-in" style="display: none;">Logout</button>
+    </nav>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Find Your Perfect Getaway</h1>
+            <p>Discover amazing resorts and hotels at the best prices</p>
+        </div>
+    </div>
+
+    <div class="search-container" id="search-container">
+        <div class="search-form-wrapper" id="search-form-wrapper">
+            <div class="search-form">
+                <form id="search-form">
+                    <div class="search-grid">
+                        <div class="form-group">
+                            <label for="destination">
+                                <i class="fas fa-map-marker-alt"></i> Destination
+                            </label>
+                            <input type="text" id="destination" name="destination" placeholder="Where are you going?"
+                                required>
+                            <div class="suggestions" id="destination-suggestions"></div>
+                        </div>
+
+                        <div class="form-group date-group">
+                            <label for="dates">
+                                <i class="fas fa-calendar-alt"></i> Check-in / Check-out
+                            </label>
+                            <div class="date-inputs">
+                                <input type="date" id="checkin" name="checkin" required>
+                                <span class="date-separator">to</span>
+                                <input type="date" id="checkout" name="checkout" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guests">
+                                <i class="fas fa-user-friends"></i> Guests & Rooms
+                            </label>
+                            <div class="dropdown-input" id="guests-dropdown-toggle">
+                                <span id="guests-display">2 Guests, 1 Room</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="dropdown-content" id="guests-dropdown">
+                                <div class="guests-selector">
+                                    <div class="guest-option">
+                                        <span>Adults</span>
+                                        <div class="quantity-selector">
+                                            <button type="button" class="qty-btn minus" data-target="adults">-</button>
+                                            <span id="adults-count">2</span>
+                                            <button type="button" class="qty-btn plus" data-target="adults">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="guest-option">
+                                        <span>Children</span>
+                                        <div class="quantity-selector">
+                                            <button type="button" class="qty-btn minus"
+                                                data-target="children">-</button>
+                                            <span id="children-count">0</span>
+                                            <button type="button" class="qty-btn plus" data-target="children">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="guest-option">
+                                        <span>Rooms</span>
+                                        <div class="quantity-selector">
+                                            <button type="button" class="qty-btn minus" data-target="rooms">-</button>
+                                            <span id="rooms-count">1</span>
+                                            <button type="button" class="qty-btn plus" data-target="rooms">+</button>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn-apply" id="apply-guests">Apply</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Filter Panel -->
+                    <div class="filter-panel" id="filter-panel">
+                        <div class="filter-grid">
+                            <div class="filter-group">
+                                <h4>Resort Rating</h4>
+                                <div class="filter-options">
+                                    <div class="chip-filter" data-filter="rating" data-value="3">3+ Stars</div>
+                                    <div class="chip-filter" data-filter="rating" data-value="4">4+ Stars</div>
+                                    <div class="chip-filter" data-filter="rating" data-value="5">5 Stars</div>
+                                </div>
+                            </div>
+
+                            <div class="filter-group">
+                                <h4>Resort Type</h4>
+                                <div class="filter-options">
+                                    <div class="chip-filter" data-filter="type" data-value="beachfront">Beachfront</div>
+                                    <div class="chip-filter" data-filter="type" data-value="family">Family Friendly
+                                    </div>
+                                    <div class="chip-filter" data-filter="type" data-value="luxury">Luxury</div>
+                                    <div class="chip-filter" data-filter="type" data-value="all-inclusive">All-Inclusive
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="filter-group">
+                                <h4>Price Range (per night)</h4>
+                                <input type="range" min="50" max="1000" value="500" class="range-slider"
+                                    id="price-range">
+                                <div class="range-values">
+                                    <span>$50</span>
+                                    <span id="price-display">$500</span>
+                                    <span>$1000+</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-grid">
+                            <div class="filter-group">
+                                <h4>Amenities</h4>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="amenities" value="pool"> Swimming Pool
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="amenities" value="spa"> Spa & Wellness
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="amenities" value="wifi"> Free WiFi
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="filter-group">
+                                <h4>Activities</h4>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="activities" value="diving"> Diving
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="activities" value="golf"> Golf
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="activities" value="kids-club"> Kids Club
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="filter-group">
+                                <h4>Deals</h4>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="deals" value="free-cancellation"> Free Cancellation
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="deals" value="special-offer"> Special Offers
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="deals" value="last-minute"> Last Minute Deals
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="search-actions">
+                        <button type="submit" class="btn-search">
+                            <i class="fas fa-search"></i> Search Resorts
+                        </button>
+                        <button type="button" class="btn-filter" id="filter-toggle">
+                            <i class="fas fa-sliders-h"></i> Filters
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="results-header">
+            <h2>Available Destinations</h2>
+            <span class="results-count" id="results-count">0 results found</span>
+        </div>
+
+        <div class="results" id="results">
+            <!-- Results will be injected here by JavaScript -->
+            <div class="loading-container" id="loading-container">
+                <div class="loading-circle"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="social-icons">
+                <a href="#" aria-label="Instagram" class="social-icon-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="Twitter" class="social-icon-link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" aria-label="LinkedIn" class="social-icon-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="Facebook" class="social-icon-link">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+            <div class="copyright">
+                © 2025 <span>TRAVELNEST PVT. LTD.</span>
+            </div>
+        </div>
+    </footer>
+    <!-- Add this at the end of the body -->
+    <script src="../js/search.js"></script>
+</body>
+
+</html>
